@@ -1,0 +1,26 @@
+.MODEL SMALL
+.STACK 100H
+
+.DATA
+MSG DB 'Enter digit: $'
+NUM DB ?
+
+.CODE
+MAIN PROC
+    MOV AX, @DATA
+    MOV DS, AX
+
+    MOV AH, 9
+    LEA DX, MSG
+    INT 21H
+
+    MOV AH, 1
+    INT 21H
+
+    SUB AL, '0'
+    MOV NUM, AL
+
+    MOV AH, 4CH
+    INT 21H
+MAIN ENDP
+END MAIN
