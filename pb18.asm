@@ -14,7 +14,7 @@ MAIN PROC
     MOV AH, 9
     INT 21H
     MOV AX, NUM
-    CALL PRINT_DEC      ; print original value
+    CALL PRINT_DEC     
 
     LEA DX, MSG2
     MOV AH, 9
